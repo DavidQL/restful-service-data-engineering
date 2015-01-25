@@ -33,12 +33,21 @@ RSpec.describe Api::V1::ContactsController, :type => :controller do
     end
   end
 
-  # describe "GET update" do
-  #   it "returns http success" do
-  #     get :update
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "update" do
+    before do
+      @contact = Contact.create(build_contact)
+      put :update, id: @contact.id, contact: {first_name: "John"}
+    end
+    it "returns http success" do
+      expect(response).to have_http_status(:success)
+    end
+    it "updates the contact" do
+      expect(@contact.reload.first_name).to eq("John")
+    end
+    it "returns the updated contact" do
+      expect(assigns(:contact)).to eq(@contact)
+    end
+  end
 
   # describe "GET destroy" do
   #   it "returns http success" do

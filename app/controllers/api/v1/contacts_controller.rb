@@ -14,6 +14,12 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def update
+    @contact = Contact.find(params[:id])
+    if @contact.update_attributes(contact_params)
+      render json: @contact
+    else
+      render json: @contact.errors, status: 400
+    end
   end
 
   def destroy
