@@ -31,7 +31,10 @@ All are strings.
 
 The following endpoints are supported:
 
-GET    /api/v1/contacts
-POST   /api/v1/contacts
-PUT    /api/v1/contacts/:id
-DELETE /api/v1/contacts/:id
+`GET    /api/v1/contacts`
+
+`POST   /api/v1/contacts`
+
+`PUT    /api/v1/contacts/:id`
+
+`DELETE /api/v1/contacts/:id`
