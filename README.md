@@ -32,9 +32,13 @@ All are strings.
 The following endpoints are supported:
 
 `GET    /api/v1/contacts`
+Fetch all contacts
 
 `POST   /api/v1/contacts`
+Create a new contact. Include `contact` in your POST payload with the model attributes.
 
 `PUT    /api/v1/contacts/:id`
+Update a contact. Include `contact` in your PUT payload with the model attributes you wish to change.
 
 `DELETE /api/v1/contacts/:id`
+Delete a contact.
