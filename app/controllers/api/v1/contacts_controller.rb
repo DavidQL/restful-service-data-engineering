@@ -23,6 +23,12 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def destroy
+    @contact = Contact.find(params[:id])
+    if @contact.destroy
+      head 200
+    else
+      render json: @contact.errors
+    end
   end
 
   private

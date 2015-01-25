@@ -49,11 +49,16 @@ RSpec.describe Api::V1::ContactsController, :type => :controller do
     end
   end
 
-  # describe "GET destroy" do
-  #   it "returns http success" do
-  #     get :destroy
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
-
+  describe "destroy" do
+    before do
+      @contact = Contact.create(build_contact)
+      delete :destroy, id: @contact.id
+    end
+    it "returns http success" do
+      expect(response).to have_http_status(:success)
+    end
+    it "deletes the contact" do
+      expect(Contact.count).to eq(0)
+    end
+  end
 end
