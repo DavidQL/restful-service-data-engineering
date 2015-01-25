@@ -42,3 +42,8 @@ Update a contact. Include `contact` in your PUT payload with the model attribute
 
 `DELETE /api/v1/contacts/:id`
 Delete a contact.
+
+## Tests
+
+Run the specs with:
+`rspec`
